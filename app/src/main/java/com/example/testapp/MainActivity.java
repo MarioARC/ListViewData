@@ -6,29 +6,29 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    ListView l;
+    String items[] = {"Test 1", "Test 2", "Test 3"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void buttonPress1(View v)
-    {
-        TextView view = findViewById(R.id.textView1);
-        view.setText("Thanks");
-        Toast.makeText(this, "Button Pressed", Toast.LENGTH_SHORT).show();
-        Log.i("Info","button1 Pressed");
-    }
+        l = findViewById(R.id.listView1);
+        ArrayAdapter<String> arr = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, items);
+        l.setAdapter(arr);
 
-    public void buttonPress2(View v)
-    {
-        TextView view = findViewById(R.id.textView2);
-        view.setText("That's a hit");
-        Log.i("Info", "button2 Pressed");
     }
+    
 }
