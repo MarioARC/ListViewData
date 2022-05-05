@@ -95,7 +95,7 @@ public class Stack {
     {
         if(head != null)
         {
-            return head.getData() + "";
+            return head.getData();
         }
         else
         {
@@ -108,13 +108,29 @@ public class Stack {
     {
         if(tail != null)
         {
-            return tail.getData() + "";
+            return tail.getData();
         }
         else
         {
             Log.i("PeekLast","List is empty");
             return null;
         }
+    }
+
+    public String atPosition(int pos)
+    {
+        int curPos = 0;
+        Node position = head;
+        if(head == null)
+        {
+            Log.i("ShowList","List is empty");
+        }
+        while (curPos != pos)
+        {
+            curPos++;
+            position = position.next;
+        }
+        return position.getData();
     }
 
     public int length()

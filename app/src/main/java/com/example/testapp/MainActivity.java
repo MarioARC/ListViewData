@@ -21,18 +21,24 @@ public class MainActivity extends AppCompatActivity {
     Stack stack = new Stack();
 
     ListView myList;
-    String[] items = {"Test 1", "Test 2", "Test 3", "This is a test string", "I am another test string", "Me too!", "rehehehehehehe", "More tests", "even more", "one more", "an extra one", "oooone more", "ok that's enough"};
+    String[] items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myList = findViewById(R.id.listView1);
-        ArrayAdapter<String> arr = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, items);
-        myList.setAdapter(arr);
-
         stack.pushFirst("hehe");
         stack.showList();
+
+        myList = findViewById(R.id.listView1);
+        ArrayAdapter<String> arr = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+
+        for(int i = 0; i < stack.length(); i++)
+        {
+            arr.add(stack.atPosition(i));
+        }
+
+        myList.setAdapter(arr);
     }
 }
