@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     Stack stack = new Stack();
 
     ListView myList;
-    String[] items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         stack.pushFirst("hehe");
+        stack.pushLast("something");
+        stack.pushLast("random");
+        stack.pushFirst("more things");
         stack.showList();
 
         myList = findViewById(R.id.listView1);
