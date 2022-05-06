@@ -27,10 +27,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        stack.pushFirst("hehe");
+        stack.pushLast("a");
+        stack.pushLast("b");
+        stack.pushLast("c");
+        stack.pushLast("d");
+        stack.pushLast("e");
+        stack.pushLast("f");
+        stack.pushLast("g");
+        stack.pushLast("h");
+        stack.pushLast("i");
+        stack.pushLast("j");
+        stack.pushLast("k");
+        stack.pushLast("l");
+        stack.pushLast("m");
+        stack.pushLast("n");
+        stack.pushLast("o");
+        stack.pushLast("p");
+        stack.pushLast("hehe");
         stack.pushLast("something");
         stack.pushLast("random");
         stack.pushFirst("more things");
+        stack.pushFirst("things");
         stack.showList();
 
         myList = findViewById(R.id.listView1);
